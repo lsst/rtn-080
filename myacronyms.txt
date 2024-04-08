@@ -5,3 +5,13 @@
 #
 # Example:
 #   MIA:Missing In Action
+FY23: Financial Year 23
+DR1:Data Release 1
+USDF: US Data Facility 
+FOA:Funding Opportunity Announcement
+VPN:Virtual Private Network
+Rucio:A scientific data management system developed at CERN; \url{https://rucio.cern.ch}
+MPC:Minor Planet Center 
+RSP:Rubin Science Platform
+LHN:Long Haul Network
+LOY1:LSST Operations Year 1

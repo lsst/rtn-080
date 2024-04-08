@@ -1,0 +1,32 @@
+\section{Data Management System portability and cloud computing}
+\label{sec:studies}
+
+Although the project baseline has physical compute facilities in Chile and \gls{USDF}, with split-site processing at \gls{IN2P3}, we have designed the system to be flexible with regard to the environment within which it is deployed.
+It is also possible the computing systems at the \gls{USDF} and Chilean Access Centers will not satisfy the entire demand for near-the-data processing and peak load; computing models that allow externally-funded resources to be easily and efficiently used are desirable.
+Public clouds, by handling the accounting and resource management for multi-tenancy, provide an interesting solution for this, provided that potentially-large data storage costs can be mitigated. Any \gls{USDF} partner shall be open to continuing investigations and partnerships of this type in collaboration with
+Rubin Observatory.
+
+In this vein, we have recently undertaken studies to investigate the possibility of performing \gls{LSST} data processing on cloud computing platforms provided by both Google and Amazon.
+On the Google cloud platform, we demonstrated that several of the major components of the \gls{Data Management System} could be run effectively.
+In particular,
+
+\begin{itemize}
+
+  \item{we deployed the \gls{Qserv} database system, demonstrating that it could achieve 80\% of the performance we achieved in-house on physical hardware;}
+
+  \item{we demonstrated data transfer adequate for \gls{Prompt Processing}, within the limits of the current \gls{LHN} networks available for testing;}.
+
+  \item{we deployed and tested the Prompt Products Database;}
+
+  \item{we deployed an instance of the \gls{LSP}.}
+
+\end{itemize}
+
+Note that the \gls{LSP} in particular is engineered around the \gls{K8S} system (\secref{sec:k8s}), and therefore deploys extremely smoothly to the Google Cloud.
+The results of this study are described in detail in \citeds{DMTN-125}.
+
+The Google study did not investigate the single largest compute load that the \gls{LSST} will face: \gls{Data Release Processing}.
+We are now addressing this on Amazon Web Services / Elastic Compute Cloud, as described in \citeds{DMTN-114}.
+This work is ongoing at time of writing; initial results are positive.
+
+We believe that these studies demonstrate the flexibility of the \gls{DM} System to a variety of deployment environments, and particularly illustrate the value --- and importance to the project of --- \gls{K8S}.

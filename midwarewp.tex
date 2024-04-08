@@ -1,0 +1,33 @@
+\subsection{\textbf{WP-02}: Rubin \gls{middleware} }
+\label{sect:wp02}
+The Rubin \gls{middleware} team acts as a center of general software development expertise to the Data Production department. Specific duties are:
+\begin{itemize}
+	\item Maintain and evolve \gls{middleware} which provides hardware and I/O abstractions for us in science and user codes.
+	\item Maintain and evolve the \gls{Qserv} distributed database.
+	\item Coordinate software build and release activities across the Data Production department.
+	\item Conduct investigations into underlying technological and/or infrastructural changes (for example, potential migration of some or all services to commodity cloud infrastructure).
+\end{itemize}
+
+\newreqtype{MDLW}
+\reqsimp{}{}{}{}{}
+{
+The facility shall support the \gls{middleware} team preferably by integrating staff in the team which is
+under direct Rubin management.
+}
+
+\reqsimp{}{}{}{}{}
+{
+Within the middleware team the facility shall assist with integration of the Gen3 butler and other middleware.
+}
+
+\reqsimp{}{}{}{}{}
+{
+Within the middleware team the facility shall assist with integration of the task framework with local processing framework such as HTCondor. See also \citedsp{LDM-152}  and \citedsp{DMTN-123}. As noted in \secref{sect:wp01} processing will also take place in IN2P3.
+}\\
+Workflow is an area potentially requiring significant some work to deploy in a new operations \gls{USDF}. This could be outsourced from the \gls{USDF} -
+other groups are expert in workflow and could be useful.
+
+\reqsimp{}{}{}{}{}
+{
+	The butler requires a meta data database for which a Postgres installation is required. See also \secref{sec:dbs}. \label{req:butler}
+}

@@ -1,69 +1,74 @@
-\documentclass[OPS,authoryear,toc]{lsstdoc}
-\input{meta}
+\documentclass[OPS,toc,SOW]{lsstdoc}
+\input{meta.tex}
 
-% Package imports go here.
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{arydshln}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[
+singlelinecheck=false % <-- important
+]{caption}
 
-% Local commands go here.
+\input{aglossary.tex}
+\makeglossaries
 
-%If you want glossaries
-%\input{aglossary.tex}
-%\makeglossaries
+\begin{document}
+\setDocCompact{true}
 
-\title{Statement of Work for the Rubin Observatory US Data Facility}
+\def\product{US Data Facility}
 
-% Optional subtitle
-% \setDocSubtitle{A subtitle}
-
-\author{%
-William O'Mullane
-}
+\title[SOW for \product{}]{Statement of Work for the Rubin Observatory \product{}}
+\author{William O'Mullane and Robert Blum}
+\setDocDate{\vcsDate}
+\setDocRef{DF-SOW}
 
 \setDocRef{RTN-080}
 \setDocUpstreamLocation{\url{https://github.com/lsst/rtn-080}}
 
-\date{\vcsDate}
 
-% Optional: name of the document's curator
-% \setDocCurator{The Curator of this Document}
+\setDocAbstract{This statement of work describes the scope of work for the
+\product{} for which the \gls{DOE} will issue a \gls{FOA} in 2020 to support
+Rubin Observatory Operations. Hardware and staffing levels needed to successfully
+support the \product{} within the Rubin Observatory Operations organization are
+described in detail.}
 
-\setDocAbstract{%
-This document was made in 2021 but never released  it is however a useful baseline. This statement of work describes the scope of work for the US Data Facility which the Department of Energy placed at SLAC  to support Rubin Observatory Operations. Hardware and staffing levels needed to successfully support the US Data Facility within the Rubin Observatory Operations organization are described in detail.
+% MOST RECENT FIRST
+\setDocChangeRecord{
+  \addtohist{0.8}{2024-04-08}{Put on lsst.io as RTN-080, no changes}{WOM}
+  \addtohist{0.7}{2020-05-20}{Draft for Agencies}{WOM, RDB}
+  \addtohist{0.6}{2020-05-13}{Further edits}{RDB}
+  \addtohist{0.5}{2020-05-12}{Appendix B, subsystem requirements, added}{WOM}
+  \addtohist{0.4}{2020-05-10}{Many Edits, new figures (1, 3, 4)}{RDB}
+  \addtohist{0.3}{2020-05-05}{Break to multiple files add WP0 }{WOM}
+  \addtohist{0.2}{2020-05-03}{Minor Edits}{RDB}
+  \addtohist{0.1}{2020-04-23}{First draft}{WOM}
 }
 
-% Change history defined here.
-% Order: oldest first.
-% Fields: VERSION, DATE, DESCRIPTION, OWNER NAME.
-% See LPM-51 for version number policy.
-\setDocChangeRecord{%
-  \addtohist{1}{YYYY-MM-DD}{Unreleased.}{William O'Mullane}
-}
-
-
-\begin{document}
-
-% Create the title page.
 \maketitle
-% Frequently for a technote we do not want a title page  uncomment this to remove the title page and changelog.
-% use \mkshorttitle to remove the extra pages
 
-% ADD CONTENT HERE
-% You can also use the \input command to include several content files.
+\input{intro}
+\input{scope}
+\subsection{Rubin Observatory Documents}
+\renewcommand{\refname}{}
+\bibliography{lsst,refs,books,refs_ads}
 
+\section{Work to be performed}
+\label{sect:wps}
+
+\input{startupwp}
+\input{infrawp}
+\input{midwarewp}
+\input{execwp}
+
+\input{projman}
+
+
+\input{studies}
 \appendix
-% Include all the relevant bib files.
-% https://lsst-texmf.lsst.io/lsstdoc.html#bibliographies
-\section{References} \label{sec:bib}
-\renewcommand{\refname}{} % Suppress default Bibliography section
-\bibliography{local,lsst,lsst-dm,refs_ads,refs,books}
-
-% Make sure lsst-texmf/bin/generateAcronyms.py is in your path
-\section{Acronyms} \label{sec:acronyms}
-\input{acronyms.tex}
-% If you want glossary uncomment below -- comment out the two lines above
-%\printglossaries
-
-
-
-
+\input{sizing}
+\input{usdfreqs}
+\section{Glossary and Acronyms }
+%\input{acronyms}
+\printglossaries
 
 \end{document}

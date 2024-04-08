@@ -1,0 +1,337 @@
+\section{Construction requirements relevant to the USDF}\label{sec:dmsrreqs}
+
+In this appendix, Data Management Subsystem Requirements (\DMSR) for construction are
+shown associated with the different aspects of the Data Facility and it's
+scope of operations. The \DMSR are captured in the Rubin document \citeds{LSE-61}. The \gls{USDF} operator will be responsible for making sure the \gls{USDF} supports these requirements in collaboration with the Rubin Operations team (specifically the Data Production Department).
+
+\subsection{Prompt processing} \label{sec:prompproc}
+The USDF will need to run certain software in near real time namely (further detailed in \citeds{DMTN-104}:
+
+\begin{itemize}
+\item Alert Distribution
+\item Prompt Processing Ingest
+\item Offline Quality Control
+\item Prompt Quality Control
+\item Prompt Processing
+\item \gls{APDB}
+\end{itemize}
+This is referred to as the prompt enclave in \citeds{DMTN-104}.
+This means supporting the \DMSR requirements below.
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+{\footnotesize CA-DM-CON-ICD-0019 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Camera engineering image data archiving } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0002 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Transient Alert Distribution } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0004 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0008 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0096 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Generate Data Quality Report Within Specified Time } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0098 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Generate DMS Performance Report Within Specified Time } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0100 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Generate Calibration Report Within Specified Time } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0102 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Engineering \&  Facility Database Archive } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0131 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Images Available Within Specified Time } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0161 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Optimization of Cost, Reliability and Availability in Order } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0162 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0165 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Infrastructure Sizing for "catching up" } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0166 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Fault-Tolerance } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0167 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0284 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Level-1 Production Completeness } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0314 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
+{\footnotesize DMS-REQ-0318 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
+{\footnotesize EP-DM-CON-ICD-0023 } &
+\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly DM Transfer of Processed Visit Images (PVI)-Based Images to EPO } \\ \cdashline{1-4}
+\end{longtable}
+
+
+\subsection{Batch System} \label{sec:offlineprod}
+
+The USDF will need to run certain software in batch mode (further detailed in \citeds{DMTN-104}:
+\begin{itemize}
+\item Batch Production
+\item Offline Quality Control
+\item Bulk Distribution
+\end{itemize}
+This is referred to as the offline production  enclave in \citeds{DMTN-104}.
+This means supporting the \DMSR requirements below.
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+			\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+			{\footnotesize DM-TS-CON-ICD-0003 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Wavefront image archive access } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0004 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0008 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0131 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Images Available Within Specified Time } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0161 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Optimization of Cost, Reliability and Availability in Order } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0162 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0163 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Re-processing Capacity } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0166 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Fault-Tolerance } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0167 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0284 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Level-1 Production Completeness } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0289 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Production Processing } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0314 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0318 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0320 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Processing of Data From Special Programs } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0334 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Persisting Data Products } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0341 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Providing a Precovery Service } \\ \cdashline{1-4}
+			{\footnotesize EP-DM-CON-ICD-0037 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize EPO Compute Cluster } \\ \cdashline{1-4}
+\end{longtable}
+
+
+
+\subsection{US Data Access Center}
+The USDF will need to host the US \gls{DAC} comprising the elements below (further detailed in \citeds{DMTN-104}r.:
+\begin{itemize}
+\item LSP Nublado
+\item LSP Portal
+\item WebDAV API
+\item \gls{SIA} API
+\item \gls{SODA} API
+\item \gls{TAP} API
+\item LSP Database
+\end{itemize}
+This is referred to as the \gls{DAC} US Enclave in \citeds{DMTN-104}.
+This means supporting the \DMSR requirements below.
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+			\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+			{\footnotesize DMS-REQ-0004 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Nightly Data Accessible Within Specified Time } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0077 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Maintain Archive Publicly Accessible } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0089 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Solar System Objects Available Within Specified Time } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0094 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Keep Historical Alert Archive } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0102 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Engineering \&  Facility Database Archive } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0119 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize \gls{DAC} resource allocation for Level 3 processing } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0131 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Images Available Within Specified Time } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0161 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Optimization of Cost, Reliability and Availability in Order } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0162 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0166 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Fault-Tolerance } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0167 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0193 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Data Access Centers } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0194 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Data Access Center Simultaneous Connections } \\ \cdashline{1-4}
+			{\footnotesize DMS-REQ-0196 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Access Center Geographical Distribution } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0284 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Level-1 Production Completeness } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0287 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize DIASource Precovery } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0310 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Un-Archived Data Product Cache } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0311 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Regenerate Un-archived Data Products } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0312 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Level 1 Data Product Access } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0313 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Level 1 \&  2 Catalog Access } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0314 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0318 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0322 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Special Programs Database } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0334 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Persisting Data Products } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0336 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize b Regenerating Data Products from Previous Data Releases } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0341 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Providing a Precovery Service } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0344 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Constraints on Level 1 Special Program Products Generation } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0363 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to Previous Data Releases } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0364 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Access Services } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0366 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Subsets Support } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0367 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access Services Performance } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0368 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Implementation Provisions } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0370 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Older Release Behavior } \\ \cdashline{1-4}
+	{\footnotesize EP-DM-CON-ICD-0001 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize US \gls{DAC} Provides EPO Interface } \\ \cdashline{1-4}
+	{\footnotesize EP-DM-CON-ICD-0002 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize EPO is an Authorized Science User } \\ \cdashline{1-4}
+	{\footnotesize EP-DM-CON-ICD-0034 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Citizen Science Data } \\ \cdashline{1-4}
+	{\footnotesize OCS-DM-COM-ICD-0029 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Archive Latency } \\ \cdashline{1-4}
+\end{longtable}
+
+\subsection{Data transfer and preservation} \label{req:dbb}
+
+The USDF needs to look after Rubin data in terms of (further detailed in \citeds{DMTN-104}):
+\begin{itemize}
+	\item Ingest/ Metadata Management
+	\item Lifetime Management
+	\item Transport/ Replication/ Backup
+	\item Storage
+\end{itemize}
+
+This is referred to as DataBackbone services  in \citeds{DMTN-104}.
+This means supporting the \DMSR requirements below.
+
+\begin{longtable}{p{3.7cm}p{3.7cm}p{3.7cm}p{3.7cm}}\hline
+	\textbf{\footnotesize Uses:}  & & \textbf{\footnotesize Used in:} & \\ \hline
+	\multicolumn{4}{c}{\textbf{Related Requirements} } \\ \hline
+	{\footnotesize DMS-REQ-0008 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Availability } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0068 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Science Image Metadata } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0074 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Difference Exposure Attributes } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0077 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Maintain Archive Publicly Accessible } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0089 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Solar System Objects Available Within Specified Time } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0094 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Keep Historical Alert Archive } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0102 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Engineering \&  Facility Database Archive } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0120 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Level 3 Data Product Self Consistency } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0122 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to catalogs for external Level 3 processing } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0123 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to input catalogs for DAC-based Level 3 processing } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0126 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to images for external Level 3 processing } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0127 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to input images for DAC-based Level 3 processing } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0130 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Data Products } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0131 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Images Available Within Specified Time } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0132 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Calibration Image Provenance } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0161 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Optimization of Cost, Reliability and Availability in Order } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0162 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Pipeline Throughput } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0163 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Re-processing Capacity } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0164 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Temporary Storage for Communications Links } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0165 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Infrastructure Sizing for "catching up" } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0166 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Fault-Tolerance } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0167 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Incorporate Autonomics } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0176 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Base Facility Infrastructure } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0185 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Archive Center } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0186 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Archive Center Disaster Recovery } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0197 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize No Limit on Data Access Centers } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0266 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Exposure Catalog } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0269 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize DIASource Catalog } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0271 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize DIAObject Catalog } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0273 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize SSObject Catalog } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0287 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize DIASource Precovery } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0291 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Query Repeatability } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0292 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Uniqueness of IDs Across Data Releases } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0293 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Selection of Datasets } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0299 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Product Ingest } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0309 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Raw Data Archiving Reliability } \\ \cdashline{1-4}
+
+	{\footnotesize DMS-REQ-0310 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Un-Archived Data Product Cache } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0313 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Level 1 \&  2 Catalog Access } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0314 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Compute Platform Heterogeneity } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0317 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize DIAForcedSource Catalog } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0318 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Management Unscheduled Downtime } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0322 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Special Programs Database } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0334 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Persisting Data Products } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0338 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Targeted Coadds } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0339 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Tracking Characterization Changes Between Data Releases } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0346 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Availability } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0363 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Access to Previous Data Releases } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0364 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Data Access Services } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0365 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Operations Subsets } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0366 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Subsets Support } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0369 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Evolution } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0370 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Older Release Behavior } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0372 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize a Archiving Camera Test Data } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0386 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize a Archive Processing Provenance } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0387 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize b Serve Archived Provenance } \\ \cdashline{1-4}
+	{\footnotesize DMS-REQ-0388 } &
+	\multicolumn{3}{p{11.1cm}}{\footnotesize Provide Re-Run Tools } \\ \cdashline{1-4}
+	{\footnotesize OCS-DM-COM-ICD-0047 } &
+			\multicolumn{3}{p{11.1cm}}{\footnotesize Image Archived Event } \\ \cdashline{1-4}
+		\end{longtable}
+

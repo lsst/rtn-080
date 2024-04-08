@@ -1,0 +1,86 @@
+\subsection{\textbf{WP-00}: \gls{USDF} Startup}
+\label{sect:wp00}
+
+The \gls{USDF} is expected to start operations in late FY23 or early FY24.
+There will need to be overlap with construction and interim operations
+facilities in FY23 and
+possibly sooner to enable a smooth and successful transition to the \gls{USDF}.
+
+Developer support is one aspect of this transition -- there need to be several
+machines
+similar to the target machines for checking code and testing. Such transition
+activities
+will involve close conversations between the \gls{USDF} awardee and Rubin staff; however, a first estimate would be to provide similar
+machines to those defined in
+\url{https://developer.lsst.io/services/lsst-dev.html}.
+
+In the following, requirements are called out in {\bf bold face} with integer indices for each type of requirement. The first set listed below are precursor requirements that establish the minimum capability of the \gls{USDF} before operations of the full \gls{LSST} begins.
+
+\newreqtype{INIT}
+\reqsimp{}{}{}{}{}
+{
+At least one year before \gls{LOY1} the USDF shall have developer support setup. This should include
+services similar to the LDF services listed on \url{https://developer.lsst.io/services}.
+}
+
+\reqsimp{}{}{}{}{}
+{
+At least one year before LOY1 the USDF shall have storage resources available for development and prototypical Data Access services.
+At this time, we estimate that 5 PB of object, 9PB of normal and 16 PB of tape storage shall be available
+ (See also \tabref{tab:foa22}.)
+}
+
+\input{tables/foa22}
+
+For \tabref{tab:foa22} the storage descriptions are given in \tabref{tab:idfstorage} and
+the machines are described in \tabref{tab:idfmachines}.
+
+\input{tables/idfmachines}
+The available memory per core should average at least 6 GB, with 10 GB for Qserv cores.
+The actual number of cores and thus core-hours may need to be adjusted based on performance of the selected node type.
+
+
+\input{tables/idfstorage}
+
+\subsection{Networking} \label{sec:networking}
+The distributed nature of the LSST facilities necessitates a complex network design, which is described in \citeds{LSE-78}.
+This includes local networking at the Summit Facility, at the Base Site, and at the Data Facility, as well as long-haul networks connecting Chile and North America.
+
+\reqsimp{}{}{}{}{}
+{
+At least six months before LOY1 the USDF shall have arranged 100Gbs, path redundant, network capacity to \gls{ESNet} or equivalent to connect to the  Rubin Observatory facility in Chile.
+}
+
+\reqsimp{}{}{}{}{}
+{The USDF shall ensure the capacity to IN2P3 is not impeded on the US side. IN2P3 are responsible for the transatlantic transfer of data.
+}
+
+\reqsimp{}{}{}{}{}
+{The USDF shall ensure low latency on the links to Chile to enable alert processing within 60s. The latency due to the network shall be  3s or better - the USDF must ensure their contribution to latency is within this envelope.
+\label{req:netlat}
+}
+
+\reqsimp{}{}{}{}{}
+{
+        The facility shall reserve an allocation of 10\,Gb/s for alert stream transfer from the \gls{USDF} to community brokers; see \citeds{LDM-612}. \label{req:netbroker}
+}
+
+\reqsimp{}{}{}{}{}
+{
+The USDF shall provide high-performance (100\,Gb/s) network paths between cluster compute nodes.
+}
+We expect that detailed tuning of the cluster networking system may be necessary for optimal performance, and would require support for this from the Data Facility host.
+\reqsimp{}{}{}{}{}
+{
+The USDF shall provide specific network overlays, such as Weave, if required for the Kubernetes cluster (see \reqref{req:k8s}).
+
+\reqsimp{}{}{}{}{}{}
+{
+The USDF shall allow Rubin to partition the infrastructure network from the Internet so that internal services and administrative interfaces are not generally accessible.
+}
+\reqsimp{}{}{}{}{}{}
+{
+ The USDF shall enable Rubin to define Internet ingresses, including  a mechanism for engineers to access the internal network and administrative interfaces, via a bastion host, VPN, or other similar mechanism.
+}
+
+

@@ -1,0 +1,57 @@
+\section{Introduction}
+\label{sect:intro}
+
+In this statement of work (SOW) we detail the needs of the Vera C. Rubin Observatory United States Data Facility (USDF). The USDF is the main data processing, archive, and access center for Rubin Observatory. The USDF is integrated within the Data Production Department of Rubin Observatory Operations.
+
+%In September 2019, the Office of High Energy Physics at the \gls{Department of Energy} requested that the Rubin Observatory project consider the possibility of siting the primary Rubin Data Facility at a \gls{DOE} national laboratory \citep{Siegrist2019}. This has now become an \gls{FOA}.
+
+DOE will select a USDF awardee through a Funding Opportunity Announcement \gls{FOA}. This will be a open process with independent review. Proposals to run the USDF for Rubin will respond to the scope of work and requirements detailed in this document and associated references.
+
+It is expected that the selected organization resulting from the \gls{FOA}
+process will provide all the North American computing for the Vera C. Rubin Observatory \gls{LSST}.
+
+The FOA process will take some time to complete, so an interim data facility will be put in place to enable continued progress in pre-operations planning and activity related to the Rubin operations data facilities.
+Some transition between this interim facility and the USDF will be required during the remaining period before construction completes, a period that now runs in parallel with Rubin pre-operations.
+
+This document summarizes important considerations for the USDF in the context of the \gls{FOA}.
+
+In particular, it
+\begin{itemize}
+
+  \item{describes how the Data Facility is integrated within the Rubin Operations structure (including its integration with the Data Production Department) and with the scientific community (\secref{sec:manage});}
+  \item{details key requirements and constraints on the Data Facility (\secref{sect:wps});}
+  \item{discusses studies which have been carried out to date on executing \gls{LSST} processing in cloud environments (\secref{sec:studies});}
+  \item{specifies other data centers that the USDF must be able to work with (\ref{sect:wp01});}
+  \item{specifies a start up ramp needed before start of operations \secref{sect:wp00}.}
+
+\end{itemize}
+
+\subsection{Context: Rubin Observatory \gls{Data Management} and the \gls{US} Data Facility}
+\label{sec:intro:context}
+
+The \gls{DMS} will be used to receive, process, and serve to the community data collected by Rubin over the course of system commissioning, pre-operations, its ten-year mission, and final processing after \gls{data collection} is complete (roughly now until 2035).
+It combines a range of both hardware and software, including --- for example --- long-haul networks; systems for ingesting data from the telescope; compute clusters for
+processing that data; scientific pipelines and algorithms; and databases and interfaces which will be used to publish the resulting data products to the scientific community.
+The requirements on the \gls{DMS} are enumerated in \citeds{LSE-61}; \gls{DMS} architecture is described in \citeds{LDM-148}; the data products which \gls{DMS} will produce and distribute are detailed in \citeds{LSE-163}.
+
+The \gls{DMS} is being developed by the Rubin Observatory \gls{Construction} project's \gls{DM} team.
+The \gls{DM} team consists of around 100 individuals, organized into functional teams that align broadly with their institutional affiliation; details of its aims, organization, and management are presented in \citeds{LDM-294}.
+The Rubin Data Facility team \emph{in construction} is one of these constituent teams within \gls{DM}, based at \gls{NCSA}, and charged with:
+
+\begin{itemize}
+
+\item{developing the \gls{middleware} systems which will collect data from \gls{Camera} and Observatory systems, archive them, and make them available for processing;}
+\item{developing the systems which will execute and manage scientific data processing during the operational era;}
+\item{supporting the activities of other teams within the \gls{DM} \gls{Subsystem}, and across the Rubin Observatory \gls{Construction} project, by providing them with compute facilities, data storage, etc., as required to build and commission the Rubin Observatory system.}
+
+\end{itemize}
+
+The overall design of the system which is currently under construction by the Data Facility team is described in \citeds{LDM-129}.
+
+During \emph{operations}, the  Data Facility forms one of the key elements within the Data Production Department.
+It will operate and maintain the systems which were developed during construction to produce and provide to the community Rubin Observatory scientific data products.
+
+It is clear from the above that the Data Facility, in both construction and operations, is responsible for providing both hardware resources and software development (and maintenance).
+Although one of the design principles of the \gls{DMS} is that, where appropriate, \gls{DM} elements should be portable between facilities (a topic to which we will return in \secref{sec:studies}), we are mindful that moving the facility
+ may have an impact on the ongoing development effort in construction. We are considering not just compute resources, which may be easily sourced from elsewhere, but also expertise, experience, and ongoing software development effort.
+
